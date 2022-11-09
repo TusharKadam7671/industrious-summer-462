@@ -1,4 +1,4 @@
-package com.masai.Exceptions;
+package com.masai.exceptions;
 
 import java.time.LocalDateTime;
 
