@@ -1,6 +1,7 @@
 package com.masai.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -64,12 +65,11 @@ public class AddressController {
 	}
 	
 	
-//	@GetMapping("/getaddressById/{id}")
-//	public ResponseEntity<Address> getStudentByIdHandler(@PathVariable("id")Integer addressId) throws AddressException{
-//		
-//		Address address=aService.getAddressById(addressId);
-//		
-//		return new ResponseEntity<Address>(address,HttpStatus.OK);
-//		
-//	}
+	@GetMapping("/getaddress/{addressId}")
+	public ResponseEntity<Address> getAddressByIdHandler(@PathVariable("addressId")Integer addressId) throws AddressException{
+		
+		Address existingAddress= aService.viewAddressById(addressId);
+		
+		return new ResponseEntity<Address>(existingAddress,HttpStatus.OK);
+	}
 }

@@ -1,8 +1,8 @@
 package com.masai.service;
 
 import java.util.List;
+import java.util.Optional;
 
-import com.masai.dao.AddressDao;
 import com.masai.exceptions.AddressException;
 import com.masai.model.Address;
 
@@ -18,5 +18,6 @@ public interface AddressService {
 	
 	public List<Address> getAllAddress() throws AddressException;
 	
-//	public Address getAddressById(Integer addressId)throws AddressException;
+	public Address viewAddressById(Integer addressId)throws AddressException;
+	
 }

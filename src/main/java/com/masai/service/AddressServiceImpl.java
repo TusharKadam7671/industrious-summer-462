@@ -1,5 +1,6 @@
 package com.masai.service;
 
+import java.lang.StackWalker.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -76,17 +77,22 @@ public class AddressServiceImpl implements AddressService{
 
 
 
-//	@Override
-//	public Address getAddressById(Integer addressId) throws AddressException {
-//		
-//		Address address=aDao.findAddressById(addressId);
-//		
-//		if(address!=null)
-//			return address;
-//		else
-//			throw new AddressException("Address not found with Id "+addressId);
-//	}
+	@Override
+	public Address viewAddressById(Integer addressId)throws AddressException {
+		
+		Optional<Address> opt=aDao.findById(addressId);
+		
+		if(opt.isPresent())
+		{
+			return opt.get();
+		}
+		else
+			throw new AddressException("Address doesn't Exist");
+	}
 
+
+
+	
 	
 	
 	
