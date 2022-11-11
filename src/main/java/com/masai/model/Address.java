@@ -5,65 +5,48 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.Generated;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 
 @Entity
 @Data
+@Setter
+@Getter
 @NoArgsConstructor
+@ToString
 @AllArgsConstructor
+
 public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer addressId;
+	private int addressId;
 	
-	@Size(min = 3, max = 6, message = "The street number should be in the range of 3 to 6 characters.")
+	@Size(min = 3, max = 10, message = "Street no. should min of 3 and max of 10 Characters")
 	private String streetNo;
-	
 	private String buildingName;
 	
-	@NotNull(message = "City cannot be null.")
-	@NotBlank(message = "City cannot be blank.")
-	@NotEmpty(message = "City cannot be empty.")
+	@NotBlank(message = "City should not be blank.")
 	private String city;
 	
-	@NotNull(message = "State cannot be null.")
 	@NotBlank(message = "State cannot be blank.")
-	@NotEmpty(message = "State cannot be empty.")
 	private String state;
 	
-	@NotNull(message = "Country cannot be null.")
 	@NotBlank(message = "Country cannot be blank.")
-	@NotEmpty(message = "Country cannot be empty.")
 	private String country;
 	
-	@Size(min = 6, max = 6, message = "Pincode should be of 6 digit only")
+	@NotBlank(message = "Pincode cannot be blank.")
 	private String pincode;
-
-	
-	public Address(
-			@Size(min = 3, max = 6, message = "The street number should be in the range of 3 to 6 characters.") String streetNo,
-			String buildingName,
-			@NotNull(message = "City cannot be null.") @NotBlank(message = "City cannot be blank.") @NotEmpty(message = "City cannot be empty.") String city,
-			@NotNull(message = "State cannot be null.") @NotBlank(message = "State cannot be blank.") @NotEmpty(message = "State cannot be empty.") String state,
-			@NotNull(message = "Country cannot be null.") @NotBlank(message = "Country cannot be blank.") @NotEmpty(message = "Country cannot be empty.") String country,
-			@Size(min = 6, max = 6, message = "Pincode should be of 6 digit only") String pincode) {
-		super();
-		this.streetNo = streetNo;
-		this.buildingName = buildingName;
-		this.city = city;
-		this.state = state;
-		this.country = country;
-		this.pincode = pincode;
-	}
-
 	
 	
-	
+		
 }
