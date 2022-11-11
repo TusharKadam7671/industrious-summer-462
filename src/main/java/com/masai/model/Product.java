@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@G
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
@@ -24,10 +25,10 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer productId;
 	
-	@Size(min = 3, message = "The product name should contain min 3 characters." )
+//	@Size(min = 3, message = "The product name should contain min 3 characters." )
 	private String productName;
 	
-	@Min(value=1, message = "Please enter a valid value as a price.")
+//	@Min(value=1, message = "Please enter a valid value as a price.")
 	private double price;
 	
 	private String color;
@@ -38,7 +39,7 @@ public class Product {
 	
 	private String manufacturer;
 	
-	@Min(value=1, message = "Please enter a valid quantity.")
+//	@Min(value=1, message = "Please enter a valid quantity.")
 	private int quantity;
 	
 	@Embedded
