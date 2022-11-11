@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.masai.dao.CustomerDao;
 import com.masai.exceptions.CustomerException;
 import com.masai.model.Customer;
+import com.masai.model.Orders;
 
 public class CustomerServiceImpl implements CustomerService{
 	
@@ -63,26 +64,26 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 
-	@Override
-	public List<Customer> viewAllCustomers(String location) throws CustomerException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
-	
 //	@Override
 //	public List<Customer> viewAllCustomers(String location) throws CustomerException {
-//			
-//		List<Customer> customerList= custDao.findAll(location);
-//		
-//		if(customerList.isEmpty()) {
-//			throw new CustomerException("Customer not found in the location");
-//			}
-//		else 
-//			return customerList;
-//		
+//		// TODO Auto-generated method stub
+//		return null;
 //	}
+	
+	
+	
+	
+	@Override
+	public List<Customer> viewAllCustomers(String location) throws CustomerException {
+			
+		List<Customer> customerList= custDao.getCustomerByCity(location);
+		
+		if(customerList.isEmpty()) {
+			throw new CustomerException("Customer not found in the location");
+			}
+		else 
+			return customerList;
+		
+	}
 
 }

@@ -1,5 +1,7 @@
 package com.masai.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -57,12 +59,12 @@ public class CustomerController {
 	}
 	
 	
-//	@GetMapping("/getcustomer")
-//	public ResponseEntity<Customer> getAllCustomer(@PathVariable("city") String location) throws CustomerException{
-//		
-//		Customer viewAllCustomer= custService.viewAllCustomers(location);
-//		return viewAllCustomer;
-//	}
+	@GetMapping("/getcustomer")
+	public ResponseEntity<List<Customer>> getAllCustomer(@PathVariable("city") String location) throws CustomerException{
+		
+		List<Customer> viewAll= custService.viewAllCustomers(location); 
+		return new ResponseEntity<List<Customer>>(viewAll, HttpStatus.OK);
+	}
 	
 
 }
