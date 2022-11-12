@@ -40,12 +40,14 @@ public class ProductDto {
 	
 	private String manufacturer;
 	
+	private String specification;
 	
 	private Integer quantity;
 
 
+
 	public ProductDto(Integer productId, String productName, Double price, String color, String dimension,
-			String manufacturer, Integer quantity) {
+			String manufacturer, String specification, Integer quantity) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -53,11 +55,13 @@ public class ProductDto {
 		this.color = color;
 		this.dimension = dimension;
 		this.manufacturer = manufacturer;
+		this.specification = specification;
 		this.quantity = quantity;
 	}
 
 	
 	
+
 
 //	public ProductDto(Integer productId, String productName, Double price, String color, String dimension,
 //			String manufacturer, Integer quantity) {
@@ -70,6 +74,7 @@ public class ProductDto {
 //		this.manufacturer = manufacturer;
 //		this.quantity = quantity;
 //	}
+
 
 
 	

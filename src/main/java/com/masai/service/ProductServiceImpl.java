@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.masai.dao.ProductDao;
 import com.masai.dto.ProductDto;
+
 import com.masai.exceptions.ProductException;
+
 import com.masai.model.Product;
 
 
@@ -58,6 +60,7 @@ public class ProductServiceImpl implements ProductService{
 		return pr3.get();
 	}
 
+
 	@Override
 	public Product updateProduct(Product product) throws ProductException {
 		
@@ -71,6 +74,7 @@ public class ProductServiceImpl implements ProductService{
 			throw new ProductException("Invalid Product Details Please Check");
 		
 	}
+
 		
 
     

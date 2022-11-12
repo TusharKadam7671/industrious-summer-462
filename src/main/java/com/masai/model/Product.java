@@ -47,6 +47,7 @@ public class Product {
 	@Embedded
 	private Category category;
 
+
 	public Product(@Size(min = 3, message = "The product name should contain min 3 characters.") String productName,
 			@Min(value = 1, message = "Please enter a valid value as a price.") double price, String color,
 			String dimension, String specification, String manufacturer,
@@ -133,6 +134,23 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+//
+//	public Product(@Size(min = 3, message = "The product name should contain min 3 characters.") String productName,
+//			@Min(value = 1, message = "Please enter a valid value as a price.") double price, String color,
+//			String dimension, String specification, String manufacturer,
+//			@Min(value = 1, message = "Please enter a valid quantity.") int quantity, Category category) {
+//		super();
+//		this.productName = productName;
+//		this.price = price;
+//		this.color = color;
+//		this.dimension = dimension;
+//		this.specification = specification;
+//		this.manufacturer = manufacturer;
+//		this.quantity = quantity;
+//		this.category = category;
+//	}
+
 	
 
 	

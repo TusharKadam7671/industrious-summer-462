@@ -53,12 +53,23 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter -->
-<dependency>
-    <groupId>io.springfox</groupId>
-    <artifactId>springfox-boot-starter</artifactId>
-    <version>3.0.0</version>
-</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-boot-starter</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter -->
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-boot-starter</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		
+
 	</dependencies>
+	
+	
 
 	<build>
 		<plugins>
@@ -101,5 +112,9 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+
+
 
 </project>
