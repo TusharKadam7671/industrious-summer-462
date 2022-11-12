@@ -29,8 +29,8 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public String logIntoAccount(LoginDto dto)throws LoginException{
 		
-		/*
-		Customer existingCustomer= cDao.findByMobileNo(dto.getMobileNo());
+		
+		Customer existingCustomer= cDao.findByMobileNumber(dto.getMobileNo());
 		
 		if(existingCustomer == null) {
 			
@@ -69,9 +69,7 @@ public class LoginServiceImpl implements LoginService{
 		else
 			throw new LoginException("Please Enter a valid password");
 		
-		*/
-		
-		return null;
+	
 	}
 
 
