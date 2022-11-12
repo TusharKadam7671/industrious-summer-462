@@ -22,53 +22,53 @@ public class AddressServiceImpl implements AddressService{
 	@Autowired
 	private AddressDao aDao;
 	
-	@Autowired
-	CustomerDao cDao;
-	
-	
-	@Autowired
-	SessionDao sDao;
+//	@Autowired
+//	CustomerDao cDao;
+//	
+//	
+//	@Autowired
+//	SessionDao sDao;
 	
 //	
-//	@Override
-//	public Address addAddress(Address address) throws AddressException {
-//		
-//		Address add=aDao.save(address);
-//		
-//		return add;
-//	}
+	@Override
+	public Address addAddress(Address address) throws AddressException {
+		
+		Address add=aDao.save(address);
+		
+		return add;
+	}
 
 	//===============================================================================
 	
-	@Override
-	public Address addAddress(Address add, String key) throws AddressException, LoginException {
-	        Address	address= aDao.save(add);
-	        
-	        CurrentUserSession currentSession = sDao.findByUuid(key);
-	        
-	        Customer currentCustomer = cDao.findById(currentSession.getUserId()).get();
-	        
-	        if(currentCustomer == null)
-			{
-				throw new LoginException("Please do login!");
-			}
-	        
-	        
-	        Address customerExist=aDao.findByCustomer(currentCustomer);
-	        
-	        if(customerExist!=null) {
-	       
-	        	throw new AddressException("No customer found !");
-	        }
-	        else
-	        {
-	        	 currentCustomer.setAddress(address);
-	 	        
-	 	        cDao.save(currentCustomer);
-	 	        
-	 	        return address;
-	        }
-	}
+//	@Override
+//	public Address addAddress(Address add, String key) throws AddressException, LoginException {
+//	        Address	address= aDao.save(add);
+//	        
+//	        CurrentUserSession currentSession = sDao.findByUuid(key);
+//	        
+//	        Customer currentCustomer = cDao.findById(currentSession.getUserId()).get();
+//	        
+//	        if(currentCustomer == null)
+//			{
+//				throw new LoginException("Please do login!");
+//			}
+//	        
+//	        
+//	        Address customerExist=aDao.findByCustomer(currentCustomer);
+//	        
+//	        if(customerExist==null) {
+//	       
+//	        	throw new AddressException("No customer found !");
+//	        }
+//	        else
+//	        {
+//	        	 currentCustomer.setAddress(address);
+//	 	        
+//	 	        cDao.save(currentCustomer);
+//	 	        
+//	 	        return address;
+//	        }
+//	}
 	
 	//===============================================================================
 	
