@@ -7,8 +7,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.masai.dao.AddressDao;
+import com.masai.dao.CustomerDao;
+import com.masai.dao.SessionDao;
 import com.masai.exceptions.AddressException;
+import com.masai.exceptions.LoginException;
+import com.masai.login.CurrentUserSession;
 import com.masai.model.Address;
+import com.masai.model.Customer;
 
 
 @Service
@@ -17,14 +22,55 @@ public class AddressServiceImpl implements AddressService{
 	@Autowired
 	private AddressDao aDao;
 	
-	@Override
-	public Address addAddress(Address address) throws AddressException {
-		
-		Address add=aDao.save(address);
-		
-		return add;
-	}
+	@Autowired
+	CustomerDao cDao;
+	
+	
+	@Autowired
+	SessionDao sDao;
+	
+//	
+//	@Override
+//	public Address addAddress(Address address) throws AddressException {
+//		
+//		Address add=aDao.save(address);
+//		
+//		return add;
+//	}
 
+	//===============================================================================
+	
+	@Override
+	public Address addAddress(Address add, String key) throws AddressException, LoginException {
+	        Address	address= aDao.save(add);
+	        
+	        CurrentUserSession currentSession = sDao.findByUuid(key);
+	        
+	        Customer currentCustomer = cDao.findById(currentSession.getUserId()).get();
+	        
+	        if(currentCustomer == null)
+			{
+				throw new LoginException("Please do login!");
+			}
+	        
+	        
+	        Address customerExist=aDao.findByCustomer(currentCustomer);
+	        
+	        if(customerExist!=null) {
+	       
+	        	throw new AddressException("No customer found !");
+	        }
+	        else
+	        {
+	        	 currentCustomer.setAddress(address);
+	 	        
+	 	        cDao.save(currentCustomer);
+	 	        
+	 	        return address;
+	        }
+	}
+	
+	//===============================================================================
 	
 	
 	@Override
