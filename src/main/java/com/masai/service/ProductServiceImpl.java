@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.masai.dao.ProductDao;
 import com.masai.dto.ProductDto;
+
+import com.masai.exceptions.ProductException;
+
 import com.masai.model.Product;
 
 
@@ -56,6 +59,22 @@ public class ProductServiceImpl implements ProductService{
 	Optional<Product> pr3 = 	pr.findById(productId);
 		return pr3.get();
 	}
+
+
+	@Override
+	public Product updateProduct(Product product) throws ProductException {
+		
+		
+		Optional<Product> opt= pr.findById(product.getProductId());
+		if(opt.isPresent()) {
+			Product updateCustomer= pr.save(product);
+			return updateCustomer;
+		}
+		else 
+			throw new ProductException("Invalid Product Details Please Check");
+		
+	}
+
 		
 
     
