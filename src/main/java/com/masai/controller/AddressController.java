@@ -29,25 +29,25 @@ public class AddressController {
 	private AddressService aService;
 	
 	
-//	@PostMapping("/address")
-//	public ResponseEntity<Address> registerStudent(@RequestBody Address address) throws AddressException{
-//		
-//		Address savedAddress=aService.addAddress(address);
-//		
-//		return new ResponseEntity<Address>(savedAddress, HttpStatus.CREATED);
-//	}
+	@PostMapping("/address")
+	public ResponseEntity<Address> registerStudent(@RequestBody Address address) throws AddressException{
+		
+		Address savedAddress=aService.addAddress(address);
+		
+		return new ResponseEntity<Address>(savedAddress, HttpStatus.CREATED);
+	}
 	
 	//================================================
 	
-	 @PostMapping("/address")
-	    public ResponseEntity<Address> addAddressHandler(@Valid @RequestBody Address address ,@RequestParam String key) throws AddressException, LoginException {
-
-	        Address addAddresses = aService.addAddress(address, key);
-
-
-	        return new ResponseEntity<Address>(addAddresses, HttpStatus.OK);
-
-	    }
+//	 @PostMapping("/address")
+//	    public ResponseEntity<Address> addAddressHandler(@Valid @RequestBody Address address ,@RequestParam String key) throws AddressException, LoginException {
+//
+//	        Address addAddresses = aService.addAddress(address, key);
+//
+//
+//	        return new ResponseEntity<Address>(addAddresses, HttpStatus.OK);
+//
+//	    }
 	
 	//================================================
 	

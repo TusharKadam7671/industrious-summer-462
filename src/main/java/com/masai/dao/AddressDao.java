@@ -9,6 +9,6 @@ import com.masai.model.Customer;
 @Repository
 public interface AddressDao extends JpaRepository<Address, Integer>{
 
-	public Address findByCustomer(Customer customer);
+//	public Address findByCustomer(Customer customer);
 	
 }

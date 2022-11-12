@@ -11,8 +11,8 @@ import com.masai.model.Address;
 
 public interface AddressService {
 	
-	public Address addAddress(Address add, String key)throws AddressException, LoginException;
-//	public Address addAddress(Address address)throws AddressException;
+//	public Address addAddress(Address add, String key)throws AddressException, LoginException;
+	public Address addAddress(Address address)throws AddressException;
 	
 	public Address updateAddress(Address address)throws AddressException;
 	
