@@ -12,7 +12,7 @@ public interface CustomerDao extends JpaRepository<Customer, Integer>{
 
 	public Customer findByMobileNumber(String mobileNo);
 	
-	@Query("select c from Customer c where c.address.city= ?1")
+	@Query("select c from Customer c where c.address.city=?1")
 	public List<Customer> getCustomerByCity(String location) throws CustomerException;
 
 }
