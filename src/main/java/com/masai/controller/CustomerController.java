@@ -2,6 +2,8 @@ package com.masai.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,7 @@ public class CustomerController {
 	
 	
 	@PostMapping("/customer")
-	public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer)throws CustomerException {
+	public ResponseEntity<Customer> registerCustomer(@Valid @RequestBody Customer customer)throws CustomerException {
 		
 		Customer saveCustomer= custService.addCustomer(customer);
 		
@@ -34,7 +36,7 @@ public class CustomerController {
 		
 	
 	@PutMapping ("/customer")
-	public ResponseEntity<Customer> updateCustomerHandler(@RequestBody Customer customer) throws CustomerException{
+	public ResponseEntity<Customer> updateCustomerHandler(@Valid @RequestBody Customer customer) throws CustomerException{
 		
 		Customer updateCustomer= custService.updateCustomer(customer);
 		
@@ -44,7 +46,7 @@ public class CustomerController {
 	
 	
 	@DeleteMapping("/customer/{customerId}")
-	public ResponseEntity<Customer> deleteCustomerByIdHandler (@PathVariable("Id")Integer customerId) throws CustomerException{
+	public ResponseEntity<Customer> deleteCustomerByIdHandler (@PathVariable("customerId")Integer customerId) throws CustomerException{
 		
 		Customer delCustomer = custService.removeCustomer(customerId);
 		
