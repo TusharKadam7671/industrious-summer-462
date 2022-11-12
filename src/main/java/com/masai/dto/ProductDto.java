@@ -1,3 +1,4 @@
+
 package com.masai.dto;
 
 import javax.persistence.Embedded;
@@ -57,7 +58,18 @@ public class ProductDto {
 
 	
 	
-	
+
+//	public ProductDto(Integer productId, String productName, Double price, String color, String dimension,
+//			String manufacturer, Integer quantity) {
+//		super();
+//		this.productId = productId;
+//		this.productName = productName;
+//		this.price = price;
+//		this.color = color;
+//		this.dimension = dimension;
+//		this.manufacturer = manufacturer;
+//		this.quantity = quantity;
+//	}
 
 
 	
