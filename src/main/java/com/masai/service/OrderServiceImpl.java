@@ -48,14 +48,27 @@ public class OrderServiceImpl implements OrderService{
 
 	
 
+//	@Override
+//	public Orders viewOrders(Orders order) throws OrderException{
+//		// TODO Auto-generated method stub
+//		Optional<Orders> check2=oRepo.findById(order.getOrderId());
+//		if(check2.isPresent()) {
+//			return check2.get();
+//		}else {
+//			throw new OrderException("No order found by this id "+order.getOrderId());
+//		}
+//		
+//	}
 	@Override
-	public Orders viewOrders(Orders order) throws OrderException{
+	public Orders viewOrder(Integer orderId) throws OrderException {
 		// TODO Auto-generated method stub
-		Optional<Orders> check2=oRepo.findById(order.getOrderId());
-		if(check2.isPresent()) {
-			return check2.get();
-		}else {
-			throw new OrderException("No order found by this id "+order.getOrderId());
+		Optional<Orders> opt1=  oRepo.findById(orderId);
+		
+		if(opt1.isPresent()) {
+			return opt1.get();
+		}
+		else {
+			throw new OrderException("No order found");
 		}
 		
 	}

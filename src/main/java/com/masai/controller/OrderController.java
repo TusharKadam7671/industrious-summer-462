@@ -46,9 +46,16 @@ public class OrderController {
 		
 	}
 	
-	@GetMapping("/orders")
-	public ResponseEntity<Orders> veiwOrderHandler(@RequestBody Orders order) throws OrderException{
-		Orders getOrders= oService.viewOrders(order);
+//	@GetMapping("/orders")
+//	public ResponseEntity<Orders> veiwOrderHandler(@RequestBody Integer orderId) throws OrderException{
+//		Orders getOrders= oService.viewOrders(orderId);
+//		return new ResponseEntity<Orders>(getOrders, HttpStatus.OK);
+//		
+//	}
+	
+	@GetMapping("/orders/{orderid}")
+	public ResponseEntity<Orders> veiwOrderHandler(@PathVariable("orderid") Integer id) throws OrderException{
+		Orders getOrders= oService.viewOrder(id);
 		return new ResponseEntity<Orders>(getOrders, HttpStatus.OK);
 		
 	}

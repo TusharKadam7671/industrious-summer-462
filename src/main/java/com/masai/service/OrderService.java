@@ -12,7 +12,7 @@ public interface OrderService {
 	public Orders addOrder(Orders order);
 	public Orders updateOrders(Orders order)throws OrderException;
 	public Orders removeOrders(Orders order)throws OrderException;
-	public Orders viewOrders(Orders order)throws OrderException;
+	public Orders viewOrder(Integer orderId)throws OrderException;
 	
 	public List<Orders> viewAllOrders(LocalDate date) throws OrderException ;
 	
