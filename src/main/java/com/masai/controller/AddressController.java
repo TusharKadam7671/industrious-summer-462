@@ -30,7 +30,7 @@ public class AddressController {
 	
 	
 	@PostMapping("/address")
-	public ResponseEntity<Address> registerStudent(@RequestBody Address address) throws AddressException{
+	public ResponseEntity<Address> registerAddress(@RequestBody Address address) throws AddressException{
 		
 		Address savedAddress=aService.addAddress(address);
 		
