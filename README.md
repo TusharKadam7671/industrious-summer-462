@@ -12,7 +12,6 @@
 - Spring Data JPA
 - Hibernate
 - SQL
-- Lombok
 
 ## Tools
 
