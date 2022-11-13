@@ -11,10 +11,15 @@
 - Spring Boot
 - Spring Data JPA
 - Hibernate
-- MySQL
-- PostMan
-- Swagger
+- SQL
 - Lombok
+
+## Tools
+
+- Spring Tool Suit (Version: 4.15.1)
+- MySQL (Version: 8.0)
+- PostMan (Version: 10.1.2)
+- Swagger UI
 
 ## Modules
 
