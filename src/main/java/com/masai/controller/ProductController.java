@@ -34,7 +34,7 @@ public class ProductController {
    private ProductServiceImpl productService;
 
 	
-	@GetMapping("/vieallproduct")
+	@GetMapping("/viewallproduct")
 	public List<Product> getAllProduct(){
 		return productService.viewAllProducts();
 	}
