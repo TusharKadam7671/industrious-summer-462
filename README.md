@@ -19,10 +19,12 @@
 ## Modules
 
 - Login Module
+- Address Module
 - Customer Module
 - Product Module
 - Order Module
 - Cart Module
+
 
 
 ### Team Members
