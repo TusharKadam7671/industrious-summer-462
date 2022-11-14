@@ -33,7 +33,7 @@
 
 ### Team Members
 
-- **[Tushar Ramchandra Kadam](Team Leader)**
+- **[Tushar Ramchandra Kadam](T-L)**
 - **[Shubham Choudhary]**
 - **[Aman Kumar])**
 - **[Vishesh Guria]**
