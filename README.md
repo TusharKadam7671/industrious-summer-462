@@ -22,12 +22,12 @@
 
 ## Modules
 
-- Login Module
-- Address Module
-- Customer Module
-- Product Module
-- Order Module
-- Cart Module
+- Login Module.
+- Address Module.
+- Customer Module.
+- Product Module.
+- Order Module.
+- Cart Module.
 
 
 
